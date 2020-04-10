@@ -6,7 +6,6 @@ var logger = require('morgan');
 var axios = require('axios');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var reviewsRouter = require('./routes/reviews');
 
 // Set default authorization header for all requests
@@ -25,7 +24,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/reviews', reviewsRouter);
 
 // catch 404 and forward to error handler

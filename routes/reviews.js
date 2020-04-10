@@ -7,7 +7,6 @@ var router = express.Router();
 router.get('/', async (req, res, next) => {
   let url = 'https://api.yelp.com/v3/businesses/4HG6PBAnnam6RfgrHqMXPw/reviews'
   var reviews = await axios.get(url).then(response => { return response.data.reviews })
-  console.log(reviews)
   var finalReviews = reviews.map(review => {
     return {
       'name': review.user.name,
